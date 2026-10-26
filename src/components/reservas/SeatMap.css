@@ -1,0 +1,55 @@
+.seatmap {
+  display: grid;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-4);
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  overflow-x: auto;
+}
+
+.seatmap__grilla {
+  display: grid;
+  grid-template-columns: repeat(var(--columnas), auto);
+  gap: var(--space-3);
+  justify-content: center;
+}
+
+.seatmap__pasillo {
+  width: 22px;
+}
+
+/* ---------- Extremos de la unidad ---------- */
+
+.seatmap__cabina,
+.seatmap__fondo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px dashed var(--color-border);
+}
+
+.seatmap__fondo {
+  padding-bottom: 0;
+  padding-top: var(--space-3);
+  border-bottom: 0;
+  border-top: 1px dashed var(--color-border);
+}
+
+.seatmap__rotulo {
+  font-size: var(--fs-xs);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.seatmap__volante {
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--color-muted);
+  border-radius: 50%;
+  opacity: 0.6;
+}

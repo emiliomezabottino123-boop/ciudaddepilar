@@ -1,0 +1,53 @@
+.contactos__telefonos {
+  display: grid;
+  gap: var(--space-5);
+  max-width: var(--container-narrow);
+  margin-inline: auto;
+  padding: 0;
+  list-style: none;
+}
+
+.contactos__item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.contactos__ciudad {
+  font-size: var(--fs-lg);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+}
+
+.contactos__ubicacion {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--space-5);
+  align-items: stretch;
+}
+
+.contactos__mapa {
+  display: grid;
+  place-items: center;
+  min-height: 260px;
+  color: var(--color-muted);
+  background: var(--color-surface);
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.contactos__agencias {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-5);
+}
+
+@media (max-width: 880px) {
+  .contactos__ubicacion {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,109 @@
+.seat {
+  --seat-bg: #e8e8e8;
+  --seat-fg: var(--color-muted);
+  --seat-border: #d4d4d4;
+
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: var(--fw-semibold);
+  font-variant-numeric: tabular-nums;
+  color: var(--seat-fg);
+  background: var(--seat-bg);
+  border: 1.5px solid var(--seat-border);
+  border-radius: 10px 10px 6px 6px;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+/* Respaldo del asiento: la barrita superior */
+.seat__back {
+  position: absolute;
+  top: 3px;
+  left: 50%;
+  translate: -50% 0;
+  width: 60%;
+  height: 4px;
+  border-radius: var(--radius-pill);
+  background: currentColor;
+  opacity: 0.35;
+}
+
+.seat__numero {
+  margin-top: 5px;
+}
+
+/* ---------- Estados ---------- */
+
+.seat--libre:hover {
+  --seat-bg: var(--color-primary-soft);
+  --seat-border: var(--color-primary);
+  --seat-fg: var(--color-primary-dark);
+  transform: translateY(-2px);
+}
+
+.seat--seleccionado {
+  --seat-bg: var(--color-primary);
+  --seat-border: var(--color-primary-dark);
+  --seat-fg: var(--color-on-primary);
+  box-shadow: var(--shadow-primary);
+}
+
+.seat--ocupado {
+  --seat-bg: #c9c9c9;
+  --seat-border: #bcbcbc;
+  --seat-fg: #8a8a8a;
+  cursor: not-allowed;
+}
+
+/* Diagonal que refuerza el estado sin depender solo del color */
+.seat--ocupado::after {
+  content: "";
+  position: absolute;
+  inset: 8px 6px 6px;
+  background: linear-gradient(
+    to bottom right,
+    transparent calc(50% - 1px),
+    #8a8a8a calc(50% - 1px),
+    #8a8a8a calc(50% + 1px),
+    transparent calc(50% + 1px)
+  );
+}
+
+.seat--bloqueado {
+  --seat-bg: repeating-linear-gradient(
+    45deg,
+    #ededed 0 5px,
+    #dcdcdc 5px 10px
+  );
+  --seat-border: #cfcfcf;
+  --seat-fg: #9a9a9a;
+  cursor: not-allowed;
+}
+
+.seat:disabled .seat__back {
+  opacity: 0.25;
+}
+
+/* Mapa de consulta: el asiento libre no es clickeable */
+.seat--lectura {
+  cursor: default;
+}
+
+.seat--lectura:hover {
+  transform: none;
+}
+
+.seat--libre.seat--lectura {
+  --seat-bg: #e6f4e7;
+  --seat-border: var(--color-success);
+  --seat-fg: var(--color-success);
+}

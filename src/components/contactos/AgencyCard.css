@@ -1,0 +1,66 @@
+.agency-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding: var(--space-6);
+  background: var(--color-surface);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform var(--transition-base) var(--easing-out),
+    box-shadow var(--transition-base);
+}
+
+.agency-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.agency-card__city {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--fs-lg);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+}
+
+.agency-card__pin {
+  font-size: 0.9em;
+}
+
+.agency-card__hours {
+  display: grid;
+  gap: var(--space-2);
+  width: 100%;
+  margin: 0;
+}
+
+.agency-card__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px dashed var(--color-border);
+}
+
+.agency-card__row dt {
+  font-weight: var(--fw-medium);
+  color: var(--color-dark);
+}
+
+.agency-card__row dd {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-muted);
+}
+
+.agency-card__address {
+  font-style: normal;
+  font-size: var(--fs-sm);
+  color: var(--color-muted);
+}

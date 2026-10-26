@@ -1,0 +1,20 @@
+.horarios__rutas {
+  display: grid;
+  gap: var(--space-5);
+  max-width: var(--container-narrow);
+  margin-inline: auto;
+}
+
+.horarios__agencias {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-5);
+}
+
+.horarios__cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-top: var(--space-7);
+}

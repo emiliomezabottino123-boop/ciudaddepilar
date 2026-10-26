@@ -1,0 +1,37 @@
+.brand {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+  color: var(--color-dark);
+}
+
+.brand__tagline {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  font-size: 0.55em;
+  opacity: 0.85;
+}
+
+.brand__name {
+  font-size: 1.6em;
+  white-space: nowrap;
+}
+
+.brand--sm {
+  font-size: 0.9rem;
+}
+
+.brand--md {
+  font-size: 1.05rem;
+}
+
+.brand--lg {
+  font-size: 1.6rem;
+}
+
+.brand--on-dark {
+  color: var(--color-on-dark);
+}

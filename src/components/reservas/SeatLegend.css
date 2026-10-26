@@ -1,0 +1,28 @@
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--fs-sm);
+  color: var(--color-muted);
+}
+
+.legend__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* La muestra reutiliza los estilos de .seat pero en tamaño reducido */
+.legend__muestra {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px 6px 4px 4px;
+  pointer-events: none;
+}
+
+.legend__muestra::after {
+  inset: 4px 3px 3px;
+}

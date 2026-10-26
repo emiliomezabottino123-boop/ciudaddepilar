@@ -1,0 +1,118 @@
+.btn {
+  --btn-bg: var(--color-primary);
+  --btn-fg: var(--color-on-primary);
+  --btn-border: transparent;
+  --btn-shadow: var(--shadow-primary);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  font-family: var(--font-heading);
+  font-weight: var(--fw-semibold);
+  text-align: center;
+  color: var(--btn-fg);
+  background: var(--btn-bg);
+  border: 2px solid var(--btn-border);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--btn-shadow);
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-base),
+    background-color var(--transition-base),
+    color var(--transition-base);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* ---------- Variantes ---------- */
+.btn--primary:hover {
+  --btn-bg: var(--color-primary-dark);
+}
+
+.btn--dark {
+  --btn-bg: var(--color-dark);
+  --btn-fg: var(--color-on-dark);
+  --btn-shadow: var(--shadow-md);
+}
+
+.btn--dark:hover {
+  --btn-bg: var(--color-dark-soft);
+}
+
+.btn--outline {
+  --btn-bg: transparent;
+  --btn-fg: var(--color-primary);
+  --btn-border: var(--color-primary);
+  --btn-shadow: none;
+}
+
+.btn--outline:hover {
+  --btn-bg: var(--color-primary);
+  --btn-fg: var(--color-on-primary);
+}
+
+.btn--ghost {
+  --btn-bg: transparent;
+  --btn-fg: var(--color-dark);
+  --btn-shadow: none;
+}
+
+.btn--ghost:hover {
+  --btn-bg: var(--color-primary-soft);
+  --btn-fg: var(--color-primary-dark);
+}
+
+/* ---------- Tamaños ---------- */
+.btn--sm {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--fs-sm);
+}
+
+.btn--md {
+  padding: var(--space-3) var(--space-6);
+  font-size: var(--fs-base);
+}
+
+.btn--lg {
+  padding: var(--space-4) var(--space-7);
+  font-size: var(--fs-md);
+}
+
+.btn--full {
+  display: flex;
+  width: 100%;
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Círculo con flecha del CTA principal (igual que en las piezas de Instagram) */
+.btn__icon {
+  display: grid;
+  place-items: center;
+  width: 2em;
+  height: 2em;
+  font-size: 0.85em;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+  transition: transform var(--transition-base);
+}
+
+.btn:hover .btn__icon {
+  transform: translateX(4px);
+}
+
+.btn--outline .btn__icon,
+.btn--ghost .btn__icon {
+  background: var(--color-primary-soft);
+}
